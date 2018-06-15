@@ -1,0 +1,94 @@
+.swapi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    min-height: 100vh;
+    padding-top: 20px;
+    color: #ffff02;
+    user-select: none;
+
+    & h1 {
+        color: currentColor;
+        font-size: 60px;
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+
+    & button {
+        padding: 5px 10px;
+        border-radius: 7px;
+        font-size: 22px;
+        cursor: pointer;
+        border: 1px solid currentColor;
+        background-color: transparent;
+        transition: box-shadow 0.3s ease;
+        margin: 0 5px 40px;
+
+        &:hover {
+            box-shadow: 1px 3px 6px -1px currentColor;
+        }
+    }
+
+    & .getPages {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & button {
+            color: lime;
+        }
+    }
+
+    & .getPrecise {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        & .startFetch {
+            color: springgreen;
+        }
+
+        & .cancelFetch {
+            color: tomato;
+        }
+
+        & .fetchAll {
+            color: royalblue;
+        }
+    }
+
+    & .lists {
+        display: flex;
+
+        & h1 {
+            font-size: 35px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        & ul {
+            width: 32vw;
+
+            & li {
+                display: flex;
+                flex-direction: column;
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 15px;
+                line-height: 1.4;
+
+                & span {
+                    display: inline-block;
+
+                    & span {
+                        color: seashell;
+                        width: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
