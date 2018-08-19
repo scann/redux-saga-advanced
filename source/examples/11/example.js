@@ -1,5 +1,5 @@
 /**
- * Приблизительная имплементация эффекта takeEvery.
+ * Приблизительная имплементация эффекта takeLatest.
  */
 
 // Core
@@ -27,6 +27,6 @@ export function* runExample () {
             yield cancel(task);
         }
 
-        task = yield fork(fetchVehicles, action);
+        task =yield fork(fetchVehicles, action);
     }
 }

@@ -14,13 +14,13 @@ import { fetchPeople } from './fetchPeople';
 import { fetchPlanets } from './fetchPlanets';
 
 export function* runExample () {
-    const channel = yield actionChannel([
+    const buffer = yield actionChannel([
         types.FETCH_ALL,
         types.FETCH_VEHICLES_ASYNC
     ]);
 
     while (true) {
-        const action = yield take(channel);
+        const action = yield take(buffer);
 
         if (action.type === types.FETCH_VEHICLES_ASYNC) {
             yield call(fetchVehicles, action);
