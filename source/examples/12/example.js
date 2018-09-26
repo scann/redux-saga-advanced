@@ -13,10 +13,10 @@ import { fetchVehicles } from './fetchVehicles';
 import { fetchPeople } from './fetchPeople';
 import { fetchPlanets } from './fetchPlanets';
 
-export function* runExample () {
+export function* runExample() {
     const buffer = yield actionChannel([
         types.FETCH_ALL,
-        types.FETCH_VEHICLES_ASYNC
+        types.FETCH_VEHICLES_ASYNC,
     ]);
 
     while (true) {

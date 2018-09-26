@@ -15,7 +15,7 @@ const logger = createLogger({
 });
 const sagaMiddleware = createSagaMiddleware();
 
-const middleware = [sagaMiddleware];
+const middleware = [ sagaMiddleware ];
 
 if (__DEV__) {
     middleware.push(logger);

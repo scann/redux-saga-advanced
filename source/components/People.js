@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 export default class People extends Component {
-    render () {
+    render() {
         const { people } = this.props;
 
         const peopleJSX = people.map((human) => (

@@ -13,9 +13,9 @@ import { take, put } from 'redux-saga/effects';
 // Instruments
 import { types } from '../../bus/swapi/types';
 import { swapiActions } from '../../bus/swapi/actions';
-import { api } from '../../REST';
+import { api } from '../../API';
 
-export function* runExample () {
+export function* runExample() {
     while (true) {
         const action = yield take(types.FETCH_VEHICLES_ASYNC);
 

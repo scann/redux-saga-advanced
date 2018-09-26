@@ -1,14 +1,16 @@
 // Instruments
-import { ROOT_URL } from './config';
+import { ROOT_URL } from './../config';
 
-export const api = {
-    fetchVehicles (page = '1') {
+export default new class Api {
+    fetchVehicles(page = '1') {
         return fetch(`${ROOT_URL}/vehicles/?page=${page}`);
-    },
-    fetchPeople (page = '1') {
+    }
+
+    fetchPeople(page = '1') {
         return fetch(`${ROOT_URL}/people/?page=${page}`);
-    },
-    fetchPlanets (page = '1') {
+    }
+
+    fetchPlanets(page = '1') {
         return fetch(`${ROOT_URL}/planets/?page=${page}`);
-    },
-};
+    }
+}();

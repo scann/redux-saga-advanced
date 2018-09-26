@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 export default class Vehicles extends Component {
-    render () {
+    render() {
         const { vehicles } = this.props;
 
         const vehiclesJSX = vehicles.map((vehicle) => (

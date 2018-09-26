@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 export default class Planets extends Component {
-    render () {
+    render() {
         const { planets } = this.props;
 
         const planetsJSX = planets.map((planet) => (

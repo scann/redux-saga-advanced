@@ -20,9 +20,9 @@ import { delay } from 'redux-saga';
 // Instruments
 import { types } from '../../bus/swapi/types';
 import { swapiActions } from '../../bus/swapi/actions';
-import { api } from '../../REST';
+import { api } from '../../API';
 
-function* fetchVehicles (action) {
+function* fetchVehicles(action) {
     yield delay(3000);
     const response = yield call(api.fetchVehicles, action.payload);
     const data = yield apply(response, response.json);
@@ -35,11 +35,11 @@ function* fetchVehicles (action) {
     `);
 }
 
-function* spawningSaga (action) {
+function* spawningSaga(action) {
     yield spawn(fetchVehicles, action);
 }
 
-export function* runExample () {
+export function* runExample() {
     while (true) {
         try {
             const action = yield take(types.FETCH_VEHICLES_ASYNC);

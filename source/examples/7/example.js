@@ -13,19 +13,19 @@ import { fetchVehicles } from './fetchVehicles';
 import { fetchPeople } from './fetchPeople';
 import { fetchPlanets } from './fetchPlanets';
 
-export function* runExample () {
+export function* runExample() {
     const tasks = [];
 
     while (true) {
         const action = yield take([
             types.FETCH_VEHICLES_ASYNC,
             types.FETCH_ALL,
-            types.CANCEL_FETCH
+            types.CANCEL_FETCH,
         ]);
 
         if (tasks.length && action.type === types.CANCEL_FETCH) {
             for (let i = 0; i < tasks.length; i++) {
-                yield cancel(tasks[i]);
+                yield cancel(tasks[ i ]);
             }
 
             continue;

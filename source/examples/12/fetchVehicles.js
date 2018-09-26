@@ -1,17 +1,12 @@
 // Core
-import {
-    put,
-    call,
-    apply,
-    cancelled
-} from 'redux-saga/effects';
+import { put, call, apply, cancelled } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 
 // Instruments
 import { swapiActions } from '../../bus/swapi/actions';
-import { api } from '../../REST';
+import { api } from '../../API';
 
-export function* fetchVehicles (action) {
+export function* fetchVehicles(action) {
     try {
         yield delay(1000);
 

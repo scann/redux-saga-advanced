@@ -3,7 +3,7 @@ import { createStore, compose, applyMiddleware } from 'redux';
 
 // Instruments
 import { rootReducer } from './rootReducer';
-import { middleware, sagaMiddleware, history } from './middleware';
+import { middleware, sagaMiddleware } from './middleware';
 import { rootSaga } from './rootSaga';
 
 const devtools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
@@ -16,4 +16,4 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga);
 
-export { store, history };
+export { store };

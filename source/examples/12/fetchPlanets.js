@@ -4,9 +4,9 @@ import { delay } from 'redux-saga';
 
 // Instruments
 import { swapiActions } from '../../bus/swapi/actions';
-import { api } from '../../REST';
+import { api } from '../../API';
 
-export function* fetchPlanets (action) {
+export function* fetchPlanets(action) {
     try {
         yield delay(1000);
 

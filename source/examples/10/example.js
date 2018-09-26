@@ -13,9 +13,9 @@ import { delay } from 'redux-saga';
 // Instruments
 import { types } from '../../bus/swapi/types';
 import { swapiActions } from '../../bus/swapi/actions';
-import { api } from '../../REST';
+import { api } from '../../API';
 
-function* fetchVehicles (action) {
+function* fetchVehicles(action) {
     yield delay(1000);
 
     const response = yield call(api.fetchVehicles, action.payload);
@@ -24,6 +24,6 @@ function* fetchVehicles (action) {
     yield put(swapiActions.fillVehicles(data.results));
 }
 
-export function* runExample () {
+export function* runExample() {
     yield takeLatest(types.FETCH_VEHICLES_ASYNC, fetchVehicles);
 }

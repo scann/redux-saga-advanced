@@ -1,5 +1,5 @@
 /**
- * На пример — процесс можно отменить с помощью эффекта cancel.
+ * Например — процесс можно отменить с помощью эффекта cancel.
  */
 
 // Core
@@ -10,16 +10,16 @@ import {
     apply,
     fork,
     cancel,
-    cancelled
+    cancelled,
 } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 
 // Instruments
 import { types } from '../../bus/swapi/types';
 import { swapiActions } from '../../bus/swapi/actions';
-import { api } from '../../REST';
+import { api } from '../../API';
 
-function* fetchVehicles (action) {
+function* fetchVehicles(action) {
     try {
         yield delay(2000);
 
@@ -36,18 +36,18 @@ function* fetchVehicles (action) {
     }
 }
 
-export function* runExample () {
+export function* runExample() {
     const tasks = [];
 
     while (true) {
         const action = yield take([
             types.FETCH_VEHICLES_ASYNC,
-            types.CANCEL_FETCH
+            types.CANCEL_FETCH,
         ]);
 
         if (tasks.length && action.type === types.CANCEL_FETCH) {
             for (let i = 0; i < tasks.length; i++) {
-                yield cancel(tasks[i]);
+                yield cancel(tasks[ i ]);
             }
 
             continue;
