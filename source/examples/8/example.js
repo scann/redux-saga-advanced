@@ -14,7 +14,7 @@
  */
 
 // Core
-import { take, spawn, put, call, apply } from 'redux-saga/effects';
+import { take, fork, put, call, apply } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 
 // Instruments
@@ -36,7 +36,7 @@ function* fetchVehicles(action) {
 }
 
 function* spawningSaga(action) {
-    yield spawn(fetchVehicles, action);
+    yield fork(fetchVehicles, action);
 }
 
 export function* runExample() {

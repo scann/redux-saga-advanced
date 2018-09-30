@@ -25,6 +25,7 @@ export function* runExample() {
 
         if (task) {
             yield cancel(task);
+            task = null;
         }
 
         task = yield fork(fetchVehicles, action);

@@ -50,7 +50,7 @@ export default class Swapi extends Component {
     _getPage = event => {
         const { fetchVehiclesAsync } = this.props;
 
-        const pageToRequest = event.target.getAttribute('data-page');
+        const pageToRequest = event.target.dataset.page;
 
         fetchVehiclesAsync(pageToRequest);
     };

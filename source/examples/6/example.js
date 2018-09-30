@@ -56,5 +56,7 @@ export function* runExample() {
         const task = yield fork(fetchVehicles, action);
 
         tasks.push(task);
+
+        console.log('→ tasks', tasks);
     }
 }

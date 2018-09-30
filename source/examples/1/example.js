@@ -30,3 +30,4 @@ export function* runExample() {
         page === 4 ? page = 1 : page += 1;
     }
 }
+
