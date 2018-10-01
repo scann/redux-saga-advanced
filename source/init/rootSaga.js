@@ -5,5 +5,5 @@ import { all } from 'redux-saga/effects';
 import { runExample } from '../examples/1';
 
 export function* rootSaga() {
-    yield all([runExample()]);
+    yield all([ runExample() ]);
 }

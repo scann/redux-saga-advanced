@@ -4,9 +4,7 @@ import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
 
 // Components
-import Vehicles from './Vehicles';
-import People from './People';
-import Planets from './Planets';
+import Entity from './Entity';
 
 // Instruments
 import Styles from './styles.m.css';
@@ -107,9 +105,9 @@ export default class Swapi extends Component {
                     </button>
                 </div>
                 <div className={Styles.lists}>
-                    <Vehicles vehicles={vehicles} />
-                    <People people={people} />
-                    <Planets planets={planets} />
+                    <Entity entities={vehicles} title="Vehicles" />
+                    <Entity entities={people} title="People" />
+                    <Entity entities={planets} title="Planets" />
                 </div>
             </section>
         );
