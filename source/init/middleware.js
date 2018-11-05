@@ -1,4 +1,5 @@
 // Core
+import { compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 
@@ -16,9 +17,11 @@ const logger = createLogger({
 const sagaMiddleware = createSagaMiddleware();
 
 const middleware = [ sagaMiddleware ];
+const devtools = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+const composeEnhancers = __DEV__ && devtools ? devtools : compose;
 
 if (__DEV__) {
     middleware.push(logger);
 }
 
-export { middleware, sagaMiddleware };
+export { middleware, sagaMiddleware, composeEnhancers };

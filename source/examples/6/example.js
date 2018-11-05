@@ -37,7 +37,7 @@ function* fetchVehicles(action) {
 }
 
 export function* runExample() {
-    const tasks = [];
+    let tasks = [];
 
     while (true) {
         const action = yield take([
@@ -46,9 +46,10 @@ export function* runExample() {
         ]);
 
         if (tasks.length && action.type === types.CANCEL_FETCH) {
-            for (let i = 0; i < tasks.length; i++) {
-                yield cancel(tasks[ i ]);
+            for (const task of tasks) {
+                yield cancel(task);
             }
+            tasks = [];
 
             continue;
         }
