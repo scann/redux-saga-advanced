@@ -2,7 +2,7 @@
     <a href="https://lectrum.io" target="_blank" rel="noopener noreferrer">
         <img src="./static/favicon/favicon-woodsmoke.svg" alt="Lectrum favicon" width="25" />
     </a>
-    Продвинутые концепции Redux-saga
+    Продвинутые концепции Redux Saga
 </h1>
 <br>
 
