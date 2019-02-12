@@ -8,13 +8,13 @@
  * может быть легко убрана сборщиком мусора во время выполнения саги
  * порожденной с помощью spawn.
  *
- * Однако это так-же приводит к тому, что не обработанное исключение,
+ * Однако это так же приводит к тому, что не обработанное исключение,
  * возбуждённое в такой саге — не сможет «всплыть» к родительской саге, и быть
  * там обработанным.
  */
 
 // Core
-import { take, spawn } from 'redux-saga/effects';
+import { take, spawn, fork } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
 
 // Instruments
@@ -34,6 +34,7 @@ export function* runExample() {
     while (true) {
         const action = yield take(types.FETCH_VEHICLES_ASYNC);
 
-        yield spawn(errorSaga, action);
+        yield spawn(errorSaga, action); //error
+        //yield fork(errorSaga, action); //error will be caught by rootSaga
     }
 }
