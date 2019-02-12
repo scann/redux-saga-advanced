@@ -27,7 +27,7 @@ const mapState = (state) => {
         fetchPlanetsAsync:  swapiActions.fetchPlanetsAsync,
         cancelFetch:        swapiActions.cancelFetch,
         fetchAll:           swapiActions.fetchAll,
-    }
+    },
 )
 export default class Swapi extends Component {
     page = 1;
@@ -46,7 +46,7 @@ export default class Swapi extends Component {
     _getPage = (event) => {
         const { fetchVehiclesAsync } = this.props;
 
-        const pageToRequest = event.target.dataset.page;
+        const pageToRequest = event.target.getAttribute('data-page');
 
         fetchVehiclesAsync(pageToRequest);
     };
